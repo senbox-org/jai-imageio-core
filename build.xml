@@ -213,7 +213,7 @@ $State: Exp $
     </condition>   
 
     <condition property="isWindowsOnX86">
-	<os family="windows" arch="x86"/>
+      <os family="windows"/>
     </condition>
   </target>
 
@@ -267,7 +267,7 @@ $State: Exp $
     <property name="jrenativesubdir" value="lib/${arch}"/>
   </target>
 
-  <target name="setupWindows" if="isWindowsOnX86">	
+  <target name="setupWindows" if="isWindowsOnX86">
     <property name="ostype" value="windows"/>
     <property name="platform" value="windows-i586"/>
     <property name="arch" value="i386"/>
@@ -573,7 +573,7 @@ $State: Exp $
 
   <!-- Create jai_imageio.jar. -->
   <target name="jar-core" depends="compile,manifest">
-    <jar jarfile="${jardir}/jai_imageio.jar"
+    <jar jarfile="${jardir}/jai-imageio.jar"
          manifest="${builddir}/Manifest" update="yes">
 	<fileset dir="${classdir}"/>
 	<metainf dir="src/share" prefix="META-INF" includes="services/*"/>
