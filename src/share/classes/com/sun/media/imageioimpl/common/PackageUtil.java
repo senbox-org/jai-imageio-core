@@ -57,7 +57,7 @@ public class PackageUtil {
     /**
      * Implementation version derived from Manifest.
      */
-    private static String version = "1.0";
+    private static String version = "1.2-SNAP";
 
     /**
      * Implementation vendor derived from Manifest.
@@ -83,16 +83,20 @@ public class PackageUtil {
             isCodecLibAvailable = false;
         }
 
-        // Set version and vendor strings.
-        try {
-            Class thisClass =
-                Class.forName("com.sun.media.imageioimpl.common.PackageUtil");
-            Package thisPackage = thisClass.getPackage();
-            version = thisPackage.getImplementationVersion();
-            vendor = thisPackage.getImplementationVendor();
-	    specTitle = thisPackage.getSpecificationTitle();
-        } catch(ClassNotFoundException e) {
-        }
+// This is not working in NetBeans.
+// https://netbeans.org/bugzilla/show_bug.cgi?id=247795
+// So we use the default values here. They are not of any value anyway
+
+//        // Set version and vendor strings.
+//        try {
+//            Class thisClass =
+//                Class.forName("com.sun.media.imageioimpl.common.PackageUtil");
+//            Package thisPackage = thisClass.getPackage();
+//            version = thisPackage.getImplementationVersion();
+//            vendor = thisPackage.getImplementationVendor();
+//	    specTitle = thisPackage.getSpecificationTitle();
+//        } catch(ClassNotFoundException e) {
+//        }
     }
 
     /**
